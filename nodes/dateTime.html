@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('dateTime', {
+        category: RED._('@flowfuse/node-red-dashboard/ui-base:ui-base.label.category'),
+        color: RED._('@flowfuse/node-red-dashboard/ui-base:ui-base.colors.dark'),
+        defaults: {
+            name: { value: "" },
+            group: { type: 'ui-group', required: true },
+            order: { value: 0 }
+        },
+        icon: "font-awesome/fa-calendar-check-o",
+        label: function() {
+            return this.name || "dateTime";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="dateTime">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-group"><i class="fa fa-table"></i> Group</label>
+        <input type="text" id="node-input-group">
+    </div>
+</script>

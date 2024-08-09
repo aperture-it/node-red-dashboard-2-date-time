@@ -1,0 +1,72 @@
+{
+    "name": "@aperture-it/node-red-dashboard-2-date-time",
+    "version": "1.0.0",
+    "description": "DateTime widget for Node-RED Dashboard 2.0",
+    "keywords": [
+        "node-red",
+        "node-red-dashboard-2"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "aperture-it/node-red-dashboard-2-date-time"
+    },
+    "license": "Apache-2.0",
+    "author": {
+        "name": "aperture-it",
+        "url": "https://github.com/aperture-it"
+    },
+    "exports": {
+        "import": "./resources/date-time.esm.js",
+        "require": "./resources/date-time.umd.js"
+    },
+    "files": [
+        "dist/*",
+        "nodes/*",
+        "ui/*",
+        "resources/*"
+    ],
+    "scripts": {
+        "build": "vite build",
+        "build:dev": "NODE_ENV=development vite build",
+        "dev": "NODE_ENV=development vite build --watch",
+        "dev:prod": "vite build --watch",
+        "lint": "npm run lint:js && npm run lint:package",
+        "lint:fix": "npm run lint:js:fix && npm run lint:package:fix",
+        "lint:js": "eslint --ext .js,.vue,.cjs,.mjs .",
+        "lint:js:fix": "yarn lint:js --fix",
+        "lint:package": "sort-package-json --check 'package.json'",
+        "lint:package:fix": "sort-package-json 'package.json'"
+    },
+    "dependencies": {
+        "@vuepic/vue-datepicker": "^9.0.1",
+        "vue": "^3.3.8"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^4.6.2",
+        "eslint": "^8.57.0",
+        "eslint-config-standard": "^17.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-n": "^16.6.2",
+        "eslint-plugin-vue": "^9.27.0",
+        "vite": "^5.3.5",
+        "vite-plugin-css-injected-by-js": "^3.5.1"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "node-red": {
+        "version": ">=3.0.0",
+        "nodes": {
+            "dateTime": "nodes/dateTime.js"
+        }
+    },
+    "node-red-dashboard-2": {
+        "version": "1.0.0",
+        "widgets": {
+            "dateTime": {
+                "output": "dateTime.umd.js",
+                "component": "DateTime"
+            }
+        }
+    }
+}
