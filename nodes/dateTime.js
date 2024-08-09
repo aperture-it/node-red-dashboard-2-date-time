@@ -6,7 +6,7 @@ module.exports = function (RED) {
 
         const node = this
         const group = RED.nodes.getNode(config.group)
-        const event = `msg-in:${node.id}`
+        const event = `msg-input:${node.id}`
         
         // only for test
         const isWindows = process.platform === 'win32'
